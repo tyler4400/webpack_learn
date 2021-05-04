@@ -10,7 +10,16 @@ const config = {
 
     output: {
         filename: "bundle.js",
-        path: path.join(__dirname, './dist1')
+        path: path.join(__dirname, './dist')
+    },
+
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            }
+        ]
     }
 }
 
