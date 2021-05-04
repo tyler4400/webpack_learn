@@ -16,8 +16,9 @@ const config = {
     module: {
         rules: [
             {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader']
+                // sass-loader node-sass两个依赖都需要安装
+                test: /\.(sass|scss)$/,
+                use: ['style-loader', 'css-loader', 'sass-loader']
             }
         ]
     }
