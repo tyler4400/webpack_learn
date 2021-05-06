@@ -1,7 +1,7 @@
 const path = require('path')
 
-// console.log('resolve', path.resolve());
-// console.log('__dirname', path.join(__dirname, './dist'));
+console.log('resolve', path.resolve());
+console.log('__dirname', path.join(__dirname, './dist'));
 
 const config = {
     mode: "production",
@@ -19,6 +19,10 @@ const config = {
                 // sass-loader node-sass两个依赖都需要安装
                 test: /\.(sass|scss)$/,
                 use: ['style-loader', 'css-loader', 'sass-loader']
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: ['file-loader']
             }
         ]
     }
