@@ -3,6 +3,9 @@ console.log('hello, webpack');
 // require('./index.scss')
 import './index.scss';
 import Icon from './icon.png'
+import aFn from './a'
+
+aFn()
 
 function component() {
     var element = document.createElement('div');

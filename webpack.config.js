@@ -23,6 +23,10 @@ const config = {
             {
                 test: /\.(png|svg|jpg|gif)$/,
                 use: ['file-loader']
+            },
+            {
+                test: /\.js$/,
+                loader: 'babel-loader'
             }
         ]
     }
