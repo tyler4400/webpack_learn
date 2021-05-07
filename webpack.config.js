@@ -1,4 +1,6 @@
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 console.log('resolve', path.resolve());
 console.log('__dirname', path.join(__dirname, './dist'));
@@ -9,7 +11,7 @@ const config = {
     entry: './src/index.js',
 
     output: {
-        filename: "bundle.js",
+        filename: "bundle.[chunkhash:8].js",
         path: path.join(__dirname, './dist')
     },
 
@@ -29,7 +31,14 @@ const config = {
                 loader: 'babel-loader'
             }
         ]
-    }
+    },
+
+    plugins: [
+        new HtmlWebpackPlugin({
+            filename: "index.html",
+            template: "template.html"
+        })
+    ]
 }
 
 module.exports = config
