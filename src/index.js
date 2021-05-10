@@ -3,9 +3,11 @@ console.log('hello, webpack');
 // require('./index.scss')
 import './index.scss';
 import Icon from './icon.png'
-import aFn from './a'
+import aFn, { Animal } from './a'
 
 aFn()
+const cat = new Animal('cat, miao miao miao')
+console.log(cat.getName());
 
 function component() {
     var element = document.createElement('div');
